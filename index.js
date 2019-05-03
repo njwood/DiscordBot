@@ -20,9 +20,23 @@ bot.on('message', message => {
         case 'Eddie':
             message.channel.sendMessage("I don't really care");
             break;
+        case 'Randy':
+            message.channel.sendMessage("Your mother!");
+            break;
         case 'purge':
             if(!args[1]) return message.reply('Define total number of lines');
             message.channel.bulkDelete(args[1]);
+            break;
+        case 'Reminder':
+            if(!args[4]) return message.reply("Requries three arguements, Date Month Year Time. Please Enter time in military format.");
+                var day = args[1];
+                var month = args[2];
+                var year = args[3];
+                var time = args[4];
+                return message.channel.send("Reminder Set for:" + " " + day + " " + month + " " + year + " " + time);
+            break;
+            case 'reminder':
+            if(!args[3]) return message.reply("Requries three arguements, Date Month Year");
             break;
     }
 })
