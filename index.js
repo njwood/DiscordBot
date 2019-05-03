@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const token = 'NTczNjAxNzU0MjE4ODg5MjM2.XMtQug.7HX4jWlBZeRsVkNUppu-HOYPEPg';
+const token = '';
 const PREFIX = '~';
 
 bot.on('ready', () => {
@@ -26,6 +26,7 @@ bot.on('message', message => {
              * Delete
              * Deletes the corresponding amount of messages based on user input
              */
+            
         case 'delete':
             if(!args[1]) return message.reply('Define total number of lines');
             message.channel.bulkDelete(args[1]);
