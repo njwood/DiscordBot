@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const token = 'NTczNjAxNzU0MjE4ODg5MjM2.XMxhug.W4JbRFfXnEasCuYuVeUXb9Jr8y0';
+const token = '';
 const PREFIX = '~';
 
 bot.on('ready', () => {
@@ -45,12 +45,23 @@ bot.on('message', message => {
              */
 
         case 'Reminder':
-            if(!args[4]) return message.reply("Requries three arguements, Date Month Year Time. Please Enter time in military format.");
+            if(!args[5]) return message.reply("Requries four arguements, Date Month Year Time. Please Enter time in military format.");
                 var day = args[1];
                 var month = args[2];
                 var year = args[3];
                 var time = args[4];
+                var reminder = args[5];
+                var Date = (day, month, year, time);
                 return message.channel.send("Reminder Set for:" + " " + day + " " + month + " " + year + " " + time);
+
+                function alertFunction(){
+                    alert("Your Reminder for " + reminder + " has occured.");
+                }
+
+                funtion reminderFunction(){
+                  var remind = (setTimeout(alertFunction, date.time));
+                }
+
                 break;
 
             /**
