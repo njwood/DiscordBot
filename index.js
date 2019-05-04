@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const token = '';
+const token = 'NTczNjAxNzU0MjE4ODg5MjM2.XMxhug.W4JbRFfXnEasCuYuVeUXb9Jr8y0';
 const PREFIX = '~';
 
 bot.on('ready', () => {
@@ -50,15 +50,23 @@ bot.on('message', message => {
                 var month = args[2];
                 var year = args[3];
                 var time = args[4];
-                var reminder = args[5];
+                var reminder = "";
+
+                if(args[5]){
+                    for(var i = 5; i <= args[i]; i++){
+                        reminder = reminder + args[i];
+                        return reminder;
+                    }
+                }
+
                 var Date = (day, month, year, time);
-                return message.channel.send("Reminder Set for:" + " " + day + " " + month + " " + year + " " + time);
+                return message.channel.send("Reminder Set for:" + " " + day + " " + month + " " + year + " " + time + " " + reminder);
 
                 function alertFunction(){
                     alert("Your Reminder for " + reminder + " has occured.");
                 }
 
-                funtion reminderFunction(){
+                function reminderFunction(){
                   var remind = (setTimeout(alertFunction, date.time));
                 }
 
@@ -78,7 +86,7 @@ bot.on('message', message => {
             var b = args[3];
 
             if(args[1] == 1){
-               return message.channel.send(a+b);
+               return message.channel.send(parseInt(a)+ parseInt(b));
             }
             if(args[1] == 2){
                 return message.channel.send(a*b);
@@ -89,7 +97,14 @@ bot.on('message', message => {
             if(args[1] == 4){
                 return message.channel.send(a-b);
             }
-        }       
+
+            case 'git':
+            message.channel.send("https://github.com/njwood/DiscordBot");
+            break;
+
+        }    // Switch Closing Bracket
+        
+        
     })
     
     bot.login(token);
